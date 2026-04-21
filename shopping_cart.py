@@ -8,6 +8,7 @@ shopping_cart["groceries"]["chips"]={"quantity": 5, "price": 2}
 print(shopping_cart)
 
 
+
 #removing an item from the electronics category
 shopping_cart["groceries"].pop("milk")
 print(shopping_cart)
@@ -18,8 +19,18 @@ quantity=0
 price=0
 for i in shopping_cart:
     for j in shopping_cart[i]:
-        quantity=shopping_cart[i][j]["quantity"]
-        price=shopping_cart[i][j]["price"]
+        quantity+=shopping_cart[i][j]["quantity"]
+        price+=shopping_cart[i][j]["price"]
         total_cost+=quantity*price
 print("The total cost of items in the shopping cart is:",total_cost)
+
+
+
+
+CATEGORY=input("ENTER THE CATEGORY:")
+ITEM=input("ENTER THE ITEM:")
+QUANTITY=int(input("ENTER THE QUANTITY:"))
+PRICE=int(input("ENTER THE PRICE:"))
+shopping_cart[CATEGORY][ITEM]={"quantity": QUANTITY, "price": PRICE}
+print(shopping_cart)
 
