@@ -14,23 +14,24 @@ shopping_cart["groceries"].pop("milk")
 print(shopping_cart)
 
 #calculating the total cost of items in the shopping cart
-total_cost=0
-quantity=0
-price=0
-for i in shopping_cart:
-    for j in shopping_cart[i]:
-        quantity+=shopping_cart[i][j]["quantity"]
-        price+=shopping_cart[i][j]["price"]
-        total_cost+=quantity*price
-print("The total cost of items in the shopping cart is:",total_cost)
+total_cost = 0
+for category in shopping_cart:
+    for item in shopping_cart[category]:
+        total_cost += shopping_cart[category][item]["quantity"] * shopping_cart[category][item]["price"]
+print("The total cost of items in the shopping cart is:", total_cost)
 
 
 
 
-CATEGORY=input("ENTER THE CATEGORY:")
-ITEM=input("ENTER THE ITEM:")
-QUANTITY=int(input("ENTER THE QUANTITY:"))
-PRICE=int(input("ENTER THE PRICE:"))
-shopping_cart[CATEGORY][ITEM]={"quantity": QUANTITY, "price": PRICE}
+CATEGORY = input("ENTER THE CATEGORY:")
+ITEM = input("ENTER THE ITEM:")
+QUANTITY = int(input("ENTER THE QUANTITY:"))
+PRICE = float(input("ENTER THE PRICE:"))
+
+# Check if category exists, if not, create it
+if CATEGORY not in shopping_cart:
+    shopping_cart[CATEGORY] = {}
+
+shopping_cart[CATEGORY][ITEM] = {"quantity": QUANTITY, "price": PRICE}
 print(shopping_cart)
 
