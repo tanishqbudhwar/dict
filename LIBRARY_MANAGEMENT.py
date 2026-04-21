@@ -7,3 +7,8 @@ for i in lib_books:
     for j in lib_books[i]:
         quantity+=lib_books[i][j]["QUANTITY"]
 print("Total quantity of books in the library:", quantity)
+subject=input("enter subject:")
+class_=input("enter class:")
+quantity=input("enter quantity:")
+lib_books[subject][class_]={"QUANTITY":quantity}
+print(lib_books)

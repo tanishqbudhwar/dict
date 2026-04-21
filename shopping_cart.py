@@ -21,7 +21,7 @@ for category in shopping_cart:
 print("The total cost of items in the shopping cart is:", total_cost)
 
 
-
+#manually adding content 
 
 CATEGORY = input("ENTER THE CATEGORY:")
 ITEM = input("ENTER THE ITEM:")
